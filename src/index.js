@@ -66,16 +66,16 @@ const headerEffect = () => {
         //     header.classList.remove("bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
         // } else if ((window.scrollY > 10) && (Theme === "dark")) {
         //     header.classList.add("bg-[#1E1B4B]/80", "backdrop-blur-md", "shadow-lg", "shadow-[#4F46E5]/50", "shadow-[#7C3AED]/30");
-        //     header.classList.remove("bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
+        //     header.classList.remove("bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");7d6c9b
         // }
 
         // for light theme
         if (window.scrollY > 10) {
-            header.classList.add("shadow-md", "backdrop-blur-md", "dark:shadow-[#1E1B4B]/30","dark:bg-[#1E1B4B]/30","shadow-[#7C3AED]/50", "bg-[#7C3AED]/50");
+            header.classList.add("shadow-md", "backdrop-blur-md", "dark:shadow-[#5d5b7d]/30","dark:bg-[#1E1B4B]/30","shadow-[#7d6c9b]/50", "bg-[#6308ffd9]/50");
             header.classList.remove("bg-linear-to-br", "dark:from-[#1E1B4B]]", "dark:to-[#3730A3]","bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
         }// for dark theme
         else{
-            header.classList.remove("shadow-md", "backdrop-blur-md", "dark:shadow-[#1E1B4B]/30","dark:bg-[#1E1B4B]/30","shadow-[#7C3AED]/50", "bg-[#7C3AED]/50");
+            header.classList.remove("shadow-md", "backdrop-blur-md", "dark:shadow-[#5d5b7d]/30","dark:bg-[#1E1B4B]/30","shadow-[#7d6c9b]/50", "bg-[#6308ffd9]/50");
             header.classList.add("bg-linear-to-br", "dark:from-[#1E1B4B]", "dark:to-[#3730A3]","bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
         } 
     });
@@ -84,9 +84,27 @@ const headerEffect = () => {
 headerEffect();
 
 
+// Browser loading animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visibleAnimation");
+            entry.target.classList.remove("invisibleAnimation");
+            
+        }else {
+            entry.target.classList.remove("visibleAnimation");
+            entry.target.classList.add("invisibleAnimation");
+        }
+    });
+},{
+    threshold: 0.5
+});
 
 
-
+const browserElements = document.querySelectorAll(".invisibleAnimation");
+    browserElements.forEach((browserElement) => {
+    observer.observe(browserElement);
+});
 
 
 

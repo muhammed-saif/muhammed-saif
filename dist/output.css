@@ -601,9 +601,6 @@
   .bg-\[\#06B6D4\]\/15 {
     background-color: color-mix(in oklab, #06B6D4 15%, transparent);
   }
-  .bg-\[\#7C3AED\]\/50 {
-    background-color: color-mix(in oklab, #7C3AED 50%, transparent);
-  }
   .bg-\[\#8B5CF6\] {
     background-color: #8B5CF6;
   }
@@ -645,6 +642,9 @@
   }
   .bg-\[\#1572B6\]\/15 {
     background-color: color-mix(in oklab, #1572B6 15%, transparent);
+  }
+  .bg-\[\#6308ffd9\]\/50 {
+    background-color: color-mix(in oklab, #6308ffd9 50%, transparent);
   }
   .bg-\[\#020617\] {
     background-color: #020617;
@@ -1008,9 +1008,6 @@
   .text-\[\#E34F26\] {
     color: #E34F26;
   }
-  .text-\[\#F1F5F9\] {
-    color: #F1F5F9;
-  }
   .text-\[\#FFFFFF\] {
     color: #FFFFFF;
   }
@@ -1052,10 +1049,10 @@
       --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, #7C3AED 30%, transparent) var(--tw-shadow-alpha), transparent);
     }
   }
-  .shadow-\[\#7C3AED\]\/50 {
-    --tw-shadow-color: color-mix(in srgb, #7C3AED 50%, transparent);
+  .shadow-\[\#7d6c9b\]\/50 {
+    --tw-shadow-color: color-mix(in srgb, #7d6c9b 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, #7C3AED 50%, transparent) var(--tw-shadow-alpha), transparent);
+      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, #7d6c9b 50%, transparent) var(--tw-shadow-alpha), transparent);
     }
   }
   .outline-0 {
@@ -1400,10 +1397,54 @@
   .dark\:text-white:where(.dark, .dark *) {
     color: var(--color-white);
   }
-  .dark\:shadow-\[\#1E1B4B\]\/30:where(.dark, .dark *) {
-    --tw-shadow-color: color-mix(in srgb, #1E1B4B 30%, transparent);
+  .dark\:shadow-\[\#5d5b7d\]\/30:where(.dark, .dark *) {
+    --tw-shadow-color: color-mix(in srgb, #5d5b7d 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, #1E1B4B 30%, transparent) var(--tw-shadow-alpha), transparent);
+      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, #5d5b7d 30%, transparent) var(--tw-shadow-alpha), transparent);
+    }
+  }
+}
+@layer components {
+  .visibleAnimation {
+    --tw-scale-x: 100%;
+    --tw-scale-y: 100%;
+    --tw-scale-z: 100%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+    opacity: 100%;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
+  }
+  .invisibleAnimation {
+    --tw-scale-x: 0%;
+    --tw-scale-y: 0%;
+    --tw-scale-z: 0%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+    opacity: 0%;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
+  }
+  .floating-tooltip {
+    animation: floating 3s ease-in-out infinite;
+  }
+  .tooltip-left {
+    animation-duration: 3.5s;
+  }
+  .tooltip-right {
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+  }
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
     }
   }
 }
