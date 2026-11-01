@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Muhammed Saif">
+    <meta name="description" content="I'm Saif, a passionate Web Developer specializing in modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, React, Tailwind CSS, and WordPress.">
+    <meta name="keywords" content="Saif, Web Developer, Frontend Developer, HTML, CSS, JavaScript, React, Tailwind CSS, WordPress Developer, Web Designer, Portfolio"/>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <title>Saif's Portfolio</title>
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+    <!-- header Section -->
+    <header class="w-full py-5 sticky top-0 backdrop-blur-md bg-linear-to-br from-[#4F46E5] dark:from-[#1E1B4B] to-[#7C3AED] dark:to-[#3730A3] z-50 transition-colors ease-in-out duration-300">
+        <nav class="w-[90%] lg:w-[1200px] mx-auto flex items-center">
+            <div class="w-3/5 lg:w-5/12 flex justify-start">
+                <div class="lw-full lg:w-4/10">
+                    <a class="flex items-center" href="index.html">
+                        <div class="size-10 rounded-xl bg-[#FFFFFF] dark:bg-linear-to-br dark:from-[#4F46E5] dark:to-[#06B6D4] flex justify-center items-center uppercase text-md text-[#4F46E5] dark:text-white font-extrabold font-inter">ms</div>
+                        <span class="text-md font-extrabold font-inter text-[#FFFFFF] dark:text-[#F1F5F9] capitalize ml-2">Muhammed Saif</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:block w-5/12">
+                <ul class="flex justify-evenly items-center">
+                    <li class="text-md font-medium text-[#FFFFFF] dark:text-[#CBD5E1] font-inter leading-[16px] hover:text-[#090465] transition-colors duration-200"><a href="index.html">Home</a></li>
+                    <li class="text-md font-medium text-[#FFFFFF] dark:text-[#CBD5E1] font-inter leading-[16px] hover:text-[#090465] transition-colors duration-200"><a href="#aboutSection">About</a></li>
+                    <li class="text-md font-medium text-[#FFFFFF] dark:text-[#CBD5E1] font-inter leading-[16px] hover:text-[#090465] transition-colors duration-200"><a href="#skillsSection">Skills</a></li>
+                    <li class="text-md font-medium text-[#FFFFFF] dark:text-[#CBD5E1] font-inter leading-[16px] hover:text-[#090465] transition-colors duration-200"><a href="#projectSection">Project</a></li>
+                    <li class="text-md font-medium text-[#FFFFFF] dark:text-[#CBD5E1] font-inter leading-[16px] hover:text-[#090465] transition-colors duration-200"><a href="#contactSection">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hidden lg:flex w-2/12 justify-between">
+                <!-- Light and Dark Mode Toggle -->
+                <div class="w-10">
+                    <div id="toggleBtn" class="shadow-lg w-15 h-8 bg-[#FFFFFF]/24 dark:bg-[#FFFFFF]/14 transition-color ease-in-out duration-300  rounded-2xl relative">
+                        <div id="toggleCircle" class="absolute top-[50%] -translate-y-[50%] left-[3px] dark:left-[31px] size-[26px] bg-[#FFFFFF] dark:bg-[#0F172A] transition-color duration-300 rounded-full flex flex-col justify-center items-center overflow-hidden">
+                            <svg id="sun" class="absolute mt-0 dark:mt-[50px] transition-all ease-in-out duration-300 size-[15px] fill-[#F59E0B] transition-all duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
+                            </svg>
+                            <svg id="moon" class="absolute -mt-[50px] dark:mt-[0px] transition-all ease-in-out duration-300 size-[15px] fill-[#A5B4FC] transition-all duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"></path>                            
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <button class="shadow-lg px-[22px] py-[11px] rounded-xl text-md font-medium text-[#4F46E5] leading-[16px] bg-[#FFFFFF] dark:bg-[#CBD5E1] hover:scale-105 decoration-amber-300 transition-all">
+                    <a  href="https://www.linkedin.com/in/muhammed-saif-" target="_blank" >Hire Me</a>
+                </button>
+            </div>
+            <!-- Sidebar Toggle for Small and Medium Screens -->
+            <div class="lg:hidden w-2/5 flex justify-end">
+                <div class="mr-5">
+                    <div id="toggleBtn" class="w-15 h-8 bg-[#FFFFFF]/24 dark:bg-[#FFFFFF]/14 transition-color ease-in-out duration-300  rounded-2xl relative">
+                        <div id="toggleCircle" class="absolute top-[50%] -translate-y-[50%] left-[3px] dark:left-[31px] size-[26px] bg-[#FFFFFF] dark:bg-[#0F172A] transition-color duration-300 rounded-full flex flex-col justify-center items-center overflow-hidden">
+                            <svg id="sun" class="absolute mt-0 dark:mt-[50px] transition-all ease-in-out duration-300 size-[15px] fill-[#F59E0B] transition-all duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
+                            </svg>
+                            <svg id="moon" class="absolute -mt-[50px] dark:mt-[0px] transition-all ease-in-out duration-300 size-[15px] fill-[#A5B4FC] transition-all duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"></path>                            
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <button class="size-7">
+                    <svg id="sidebarOpenBtn" class="size-[100%] md:size-7 fill-[#0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18V20H5V18H16ZM21 11V13H3V11H21ZM19 4V6H8V4H19Z"></path></svg>
+                    <svg id="sidebarCloseBtn" class="hidden size-[100%] md:size-7 fill-[#0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- Sidebar Section -->
+    <section>
+        <div id="sidebar" class="w-full mx-auto h-dvh fixed top-[78px] backdrop-blur-md bg-[#ffffff]/70 right-0 z-50 translate-x-full opacity-0 invisible transition-[transform,opacity,visibility]">
+            <div class="w-[90%] mx-auto">
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                        <a href="index.html" class="text-[20px] font-semibold font-inter py-[20px] block">Home</a>
+                        <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </li>
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0f172a]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                        <a href="#aboutSection" class="text-[20px] font-semibold font-inter py-[20px] block">About</a>
+                        <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </li>
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                        <a href="#skillsSection" class="text-[20px] font-semibold font-inter py-[20px] block">Skills</a>
+                        <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </li>
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                        <a href="#projects" class="text-[20px] font-semibold font-inter py-[20px] block">Projects</a>
+                        <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </li>
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                        <a href="#contactSection" class="text-[20px] font-semibold font-inter py-[20px] block">Contact</a>
+                        <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </li>
+                    <li class="mt-[40px]">
+                        <button class="w-full bg-[#4F46E5] px-[145px] py-[15px] rounded-lg hover:bg-[#1108bc] hover:scale-105 transition-all">
+                            <a class="text-md text-center font-semibold font-inter text-[#FFFFFF]" href="#">Hire Me</a>
+                        </button>
+                    </li>
+                    <li class="flex justify-start mt-[22px]">
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#E2E8F0] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://github.com/muhammed-saif" target="_blank">GitHub</a>
+                        </button>
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#E2E8F0] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://www.linkedin.com/in/muhammed-saif-" target="_blank">Linkedin</a>
+                        </button>
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#E2E8F0] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://www.facebook.com/muhammed.saif.19" target="_blank">Facebook</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="w-full bg-linear-to-br from-[#0F172A] to-[#312E81]">
+        <div class="w-[90%] lg:w-[1200px] mx-auto py-[44px] lg:py-[96px] flex flex-wrap justify-center lg:between">
+            <div class="order-last lg:order-first w-full lg:w-1/2">
+                <div class="w-full md:w-1/2 py-[12px] px-[14px] bg-[#1E293B] rounded-full flex items-center space-x-2">
+                    <div class="size-[8px] rounded-full bg-[#22C55E]"></div>
+                    <span class="text-[13px] font-medium text-[#CBD5E1] leading-[13px]">Learning MERN stack · Open to internships</span>
+                </div>
+                <h1 class="text-[44px] lg:text-[76px] font-extrabold text-white font-inter leading-[54px] lg:leading-[84px] -tracking-[2px] py-6">Muhammed Saif</h1>
+                <h2 class="text-[17px] lg:text-[22px] font-semibold text-[#67E8F9] font-inter">Aspiring Full-Stack Web Developer · MERN Stack</h2>
+                <p class="text-[15px] lg:text-lg font-normal text-[#CBD5E1] font-inter leading-[24px] lg:leading-[30px] py-6">I'm on the path to becoming a full-stack web developer. I'm learning the MERN stack — MongoDB, Express.js, React and Node.js — and building responsive, user-friendly websites with HTML, CSS, Tailwind CSS and JavaScript.</p>
+                <div class="">
+                    <button class="bg-[#4F46E5] hover:bg-[#1108bc] hover:scale-105 transition-all px-[30px] py-[15px] rounded-xl lg:rounded-lg mr-[14px] mb-12">
+                        <a href="https://github.com/repos?q=owner%3A%40me" target="_blank" class="text-md font-inter font-semibold text-white">View Projects</a>
+                    </button>
+                    <button class="border-2 border-[#475569] hover:border-[#1108bc] hover:scale-105 transition-all px-[30px] py-[15px] rounded-xl lg:rounded-lg">
+                        <a href="https://www.facebook.com/muhammed.saif.19" target="_blank" class="text-md font-inter font-semibold text-white">Contact Me</a>
+                    </button>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-3/5 flex justify-between">
+                    <div>
+                        <span class="text-[30px] font-extrabold font-inter text-white">10+</span>
+                        <p class="text-[13px] font-normal font-inter text-[#94A3B8]">Projects built</p>
+                    </div>
+                    <div>
+                        <span class="text-[30px] font-extrabold font-inter text-white">3+ yr</span>
+                        <p class="text-[13px] font-normal font-inter text-[#94A3B8]">Learning web dev</p>
+                    </div>
+                    <div>
+                        <span class="text-[30px] font-extrabold font-inter text-white">100%</span>
+                        <p class="text-[13px] font-normal font-inter text-[#94A3B8]">Responsive</p>
+                    </div>
+                </div>
+                <div class=""></div>
+            </div>
+            <div class="w-full lg:w-1/2 order-first lg:order-last flex justify-center lg:justify-end mb-9 lg:mb-0 mt-7 lg:mt-0">
+                <div class="w-[300px] md:w-[452px] h-[340px] md:h-[512px] border-3 border-[#6366F1] rounded-4xl relative  ml-7 lg:ml-0">
+                    <div class="size-[100%] rounded-4xl bg-[url('../assets/muhammed-saif.png')] bg-cover bg-no-repeat bg-center absolute -top-7 -left-7">
+                    <!-- Tooltip text -->
+                        <div class="py-[7px] lg:py-[10px] px-[10px] md:px-[16px] bg-[#FFFFFF] rounded-xl flex items-center space-x-2 absolute -left-[25px] lg:-left-[36px] top-[80px] lg:top-[153.6px]">
+                            <div class="size-[7px] lg:size-[10px] rounded-full bg-[#22C55E]"></div>
+                            <span class="text-[10px] lg:text-[13px] font-bold font-inter text-[#0F172A] leading-[13px]">MERN Stack Learner</span>
+                        </div>
+                    <!-- Tooltip text -->
+                        <div class="py-[7px] lg:py-[10px] px-[10px] md:px-[16px] bg-[#FFFFFF] rounded-xl flex items-center space-x-2 absolute -right-[51px] md:-right-[45px] bottom-[44px]">
+                            <div class="size-[7px] lg:size-[10px] rounded-full bg-[#06B6D4]"></div>
+                            <span class="text-[10px] lg:text-[13px] font-bold font-inter text-[#0F172A] leading-[13px]">Clean Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="aboutSection" class="w-full bg-[#F8FAFC] dark:bg-[#0B1120]">
+        <div class="w-[90%] lg:w-[1200px] mx-auto py-16 lg:py-24 flex flex-wrap justify-center lg:justify-between">
+            <div class="w-full h-fit lg:w-8/22 order-last lg:order-first bg-[#F8FAFC] dark:bg-[#0F172A] border-2 border-[#E2E8F0]  dark:border-[#2A3750] p-8 rounded-2xl">
+                <h3 class="text-lg font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter">Quick Facts</h3>
+                <ul class="w-full">
+                    <li class="border-b-2 border-[#94A3B8] dark:border-[#2A3750] py-4">
+                        <h4 class="text-[11px] font-semibold text-[#64748B] dark:text-[#94A3B8] tracking-[1px] uppercase">Name</h4>
+                        <p class="text-md font-semibold font-inter text-[#0F172A] dark:text-[#F1F5F9] leading-[22px]">Muhammed Saif</p>
+                    </li>
+                    <li class="border-b-2 border-[#E2E8F0] dark:border-[#2A3750] py-4">
+                        <h4 class="text-[11px] font-semibold text-[#64748B] dark:text-[#94A3B8] tracking-[1px] uppercase">Studying</h4>
+                        <p class="text-md font-semibold font-inter text-[#0F172A] dark:text-[#F1F5F9] leading-[22px]">Higher Secondary Certificate (HSC)</p>
+                    </li>
+                    <li class="border-b-2 border-[#E2E8F0] dark:border-[#2A3750] py-4">
+                        <h4 class="text-[11px] font-semibold text-[#64748B] dark:text-[#94A3B8] tracking-[1px] uppercase">Focus</h4>
+                        <p class="text-md font-semibold font-inter text-[#0F172A] dark:text-[#F1F5F9] leading-[22px]">Full-Stack Web Development (MERN)</p>
+                    </li>
+                    <li class="border-b-2 border-[#E2E8F0] dark:border-[#2A3750] py-4">
+                        <h4 class="text-[11px] font-semibold text-[#64748B] dark:text-[#94A3B8] tracking-[1px] uppercase">Languages</h4>
+                        <p class="text-md font-semibold font-inter text-[#0F172A] dark:text-[#F1F5F9] leading-[22px]">Bangla,English</p>
+                    </li>
+                    <li class="pt-4">
+                        <h4 class="text-[11px] font-semibold text-[#64748B] dark:text-[#94A3B8] tracking-[1px] uppercase">Location</h4>
+                        <p class="text-md font-semibold font-inter text-[#0F172A] dark:text-[#F1F5F9] leading-[22px]">Bangladesh</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full lg:w-13/22 order-first lg:order-last mb-7 lg:mb-0">
+                <h2 class="text-[13px] text-center lg:text-left font-bold text-[#4F46E5] dark:text-[#A5B4FC] tracking-[2px] font-inter uppercase pb-3">About Me</h2>
+                <h3 class="text-[30px] lg:text-[42px] text-center lg:text-left font-extrabold text-[#0F172A] dark:text-[#F1F5F9] tracking-[-1px] font-inter leading-[38px] lg:leading-[52px]">Building the web, from interface to database</h3>
+                <p class="text-[15px] lg:text-[17px] text-center lg:text-left font-normal text-[#64748B] dark:text-[#94A3B8] leading-6 lg:leading-7 font-inter mt-[22px]">I'm a student and aspiring full-stack web developer who loves turning ideas into working web applications. I'm currently learning the MERN stack and I learn by building real projects, always exploring better ways to write code and design experiences people enjoy using.</p>
+                <!-- Card -->
+                <div class="w-full border-2 dark:bg-[#172033] border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg flex mt-[22px]">
+                    <div>
+                        <div class="size-[44px] bg-[#EEF2FF] dark:bg-[#272B5C] rounded-xl flex justify-center items-center mr-4">
+                            <span class="text-[15px] font-extrabold font-inter text-[#4F46E5] dark:text-[#A5B4FC]">01</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-[17px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter">Learning Journey</h4>
+                        <p class="text-[15px] font-normal leading-6 text-[#64748B] font-inter">Studying Computer Science & Engineering and learning the MERN stack (MongoDB, Express.js, React, Node.js) on top of HTML, CSS, Tailwind CSS and JavaScript.</p>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="w-full border-2 dark:bg-[#172033] border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg flex mt-[22px]">
+                    <div>
+                        <div class="size-[44px] bg-[#EEF2FF] dark:bg-[#272B5C] rounded-xl flex justify-center items-center mr-4">
+                            <span class="text-[15px] font-extrabold font-inter text-[#4F46E5] dark:text-[#A5B4FC]">02</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-[17px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter">Career Goal</h4>
+                        <p class="text-[15px] font-normal leading-6 text-[#64748B] font-inter">To become a professional full-stack web developer who builds complete, scalable web applications from the interface to the database.</p>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="w-full border-2 dark:bg-[#172033] border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg flex mt-[22px]">
+                    <div>
+                        <div class="size-[44px] bg-[#EEF2FF] dark:bg-[#272B5C] rounded-xl flex justify-center items-center mr-4">
+                            <span class="text-[15px] font-extrabold font-inter text-[#4F46E5] dark:text-[#A5B4FC]">03</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-[17px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter">Personal Interests</h4>
+                        <p class="text-[15px] font-normal leading-6 text-[#64748B] font-inter">UI/UX design, open-source projects, problem solving and learning new technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skillsSection" class="w-full bg-[#F8FAFC] dark:bg-[#0F172A]">
+        <div class="w-[90%] lg:w-[1200px] mx-auto py-16 lg:py-24">
+            <h2 class="text-[13px] font-bold text-[#4F46E5] dark:text-[#A5B4FC] tracking-[2px] font-inter uppercase text-center">What I know</h2>
+            <h3 class="text-[30px] lg:text-[42px] font-extrabold text-[#0F172A] text-[#F1F5F9] tracking-[-1px] font-inter leading-[38px] lg:leading-[52px] text-center my-3">Technologies I work with</h3>
+            <p class="text-[15px] lg:text-[17px] font-normal text-[#64748B] leading-6 lg:leading-7 font-inter text-center">The tools I use today and the MERN stack I am learning next.</p>
+            <div class="w-full mt-14 flex justify-between flex-wrap">
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#E34F26]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#E34F26] font-inter">H5</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">HTML</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#E34F26] font-inter">90%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[90%] h-full bg-[#E34F26] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#1572B6]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#1572B6] font-inter">C3</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">CSS</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#1572B6] font-inter">85%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[85%] h-full bg-[#1572B6] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#06B6D4]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#06B6D4] font-inter">TW</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">Tailwind CSS</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#06B6D4] font-inter">80%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[80%] h-full bg-[#06B6D4] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#CA8A04]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#CA8A04] font-inter">JS</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">JavaScript</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#CA8A04] font-inter">80%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0]">
+                            <div class="w-[80%] h-full bg-[#CA8A04] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#22B8CF]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#22B8CF] font-inter">Re</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">React</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#22B8CF] font-inter">75%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[75%] h-full bg-[#22B8CF] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#539E43]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#539E43] font-inter">No</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">Node.js</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#539E43] font-inter">70%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[70%] h-full bg-[#539E43] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#0F172A]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#0F172A] font-inter">Ex</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">Express.Js</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#0F172A] font-inter">65%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[65%] h-full bg-[#0F172A] dark:bg-[#F1F5F9] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#47A248]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#47A248] font-inter">Mg</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">MongoDB</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#47A248] font-inter">75%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[75%] h-full bg-[#47A248] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#E34F26]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#E34F26] font-inter">Git</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">Git</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#E34F26] font-inter">70%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[70%] h-full bg-[#E34F26] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#0F172A]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#0F172A] font-inter">GH</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">GitHub</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#0F172A] font-inter">50%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[50%] h-full bg-[#0F172A] dark:bg-[#F1F5F9] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#16A34A]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#16A34A] font-inter">RD</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">Responsibe Design</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#16A34A] font-inter">100%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[100%] h-full bg-[#16A34A] rounded-sm"></div>
+                        </div>
+                    </div>
+                <!-- Skill Card -->
+                    <div class="w-10/21 md:w-10/32 lg:w-12/51 bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750] p-[22px] rounded-2xl shadow-lg mt-6 p-7">
+                        <div>
+                            <div class="size-[56px] bg-[#8B5CF6]/15 rounded-xl flex justify-center items-center">
+                                <span class="text-[15px] font-extrabold text-[#8B5CF6] font-inter">Fg</span>
+                            </div>
+                        </div>
+                        <h4 class="text-md font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter capitalize py-[14px]">Figma</h4>
+                        <div class="w-full flex justify-between mb-[14px]">
+                            <div>
+                                <p class="text-[13px] font-normal text-[#64748B] font-inter">Advanced</p>
+                            </div>
+                            <div>
+                                <span class="text-[13px] font-semibold text-[#8B5CF6] font-inter">60%</span>
+                            </div>
+                        </div>
+                        <div class="w-full h-[6px] rounded-sm bg-[#E2E8F0] dark:bg-[#2A3750]">
+                            <div class="w-[60%] h-full bg-[#8B5CF6] rounded-sm"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Section -->
+    <section id="projectSection" class="w-full bg-[#F8FAFC] dark:bg-[#0B1120]">
+        <div class="w-[90%] lg:w-[1200px] mx-auto py-16 lg:py-24">
+            <h2 class="text-[13px] font-bold text-[#4F46E5] dark:text-[#A5B4FC] tracking-[2px] font-inter uppercase text-center">My work</h2>
+            <h3 class="text-[30px] lg:text-[42px] font-extrabold text-[#0F172A] dark:text-[#F1F5F9] tracking-[-1px] font-inter leading-[38px] lg:leading-[52px] text-center my-3">Featured Projects</h3>
+            <p class="w-full lg:w-1/2 mx-auto text-[15px] lg:text-[17px] font-normal text-[#64748B] dark:text-[#F1F5F9] leading-6 lg:leading-7 font-inter text-center">A selection of projects where I practiced layout, responsiveness and clean code.</p>
+            <div class="w-full mt-14 flex justify-center md:justify-evenly lg:justify-between flex-wrap">
+            <!-- Featured Card -->
+                <div class="w-full md:w-10/21 lg:w-10/32 rounded-2xl shadow-lg mb-5 lg:mb-0  bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750]">
+                        <div class="w-full rounded-t-2xl overflow-hidden">
+                            <img class="size-[100%] object-cover" src="assets/resturent-web-image.png" alt="Resturent Image">
+                        </div>
+                        <div class="full p-[26px]">
+                            <h4 class="text-[20px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter leading-[26px] mb-3">Foodie – Restaurant Website</h4>
+                            <p class="w-full text-[15px] font-normal text-[#64748B] dark:text-[#94A3B8] leading-6 font-inter">Modern SaaS platform offering membership management solutions, community engagement, event booking, and business growth.</p>
+                            <div class="flex justify-start my-3">
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">HTML</div>
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">CSS</div>
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">JavaScript</div>
+                            </div>
+                            <div class="w-full flex justify-start">
+                                <div class="py-[10px] px-[18px] bg-[#4F46E5] dark:bg-[#6366F1] rounded-xl text-sm font-semibold font-inter text-[#FFFFFF]  hover:scale-105 transition-transform duration-300 mr-[10px]">
+                                    <a href="https://stunning-muffin-585ef9.netlify.app/" target="_blank">Live Demo</a>
+                                </div>
+                                <div class="py-[10px] px-[18px] rounded-xl border-2 border-[#E2E8F0] dark:border-[#2A3750] text-sm  text-[#0F172A] dark:text-[#F1F5F9] font-semibold font-inter hover:scale-105 transition-transform duration-300">
+                                    <a href="https://github.com/muhammed-saif/Resturent-Website" target="_blank">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            <!-- Featured Card -->
+                <div class="w-full md:w-10/21 lg:w-10/32 rounded-2xl shadow-lg mb-5 lg:mb-0  bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750]">
+                        <div class="w-full rounded-t-2xl overflow-hidden">
+                            <img class="size-[100%] object-cover" src="assets/nexcent-web-image.png" alt="Nexcent Web Image">
+                        </div>
+                        <div class="full p-[26px]">
+                            <h4 class="text-[20px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter leading-[26px] mb-3">Marketing – Nexcent Website</h4>
+                            <p class="w-full text-[15px] font-normal text-[#64748B] dark:text-[#94A3B8] leading-6 font-inter">A modern, responsive business landing page showcasing community management, membership solutions, achievements, and customer engagement.</p>
+                            <div class="flex justify-start my-3">
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">HTML</div>
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">CSS</div>
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">JavaScript</div>
+                            </div>
+                            <div class="w-full flex justify-start">
+                                <div class="py-[10px] px-[18px] bg-[#4F46E5] dark:bg-[#6366F1] rounded-xl text-sm font-semibold font-inter text-[#FFFFFF]  hover:scale-105 transition-transform duration-300 mr-[10px]">
+                                    <a href="https://nex-cent-web.netlify.app/" target="_blank">Live Demo</a>
+                                </div>
+                                <div class="py-[10px] px-[18px] rounded-xl border-2 border-[#E2E8F0] dark:border-[#2A3750] text-sm  text-[#0F172A] dark:text-[#F1F5F9] font-semibold font-inter hover:scale-105 transition-transform duration-300">
+                                    <a href="https://github.com/muhammed-saif/Nexcent-web" target="_blank">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            <!-- Featured Card -->
+                <div class="w-full md:w-10/21 lg:w-10/32 rounded-2xl shadow-lg mb-5 lg:mb-0  bg-[#FFFFFF] dark:bg-[#172033] border-2 border-[#E2E8F0] dark:border-[#2A3750]">
+                        <div class="w-full rounded-t-2xl overflow-hidden">
+                            <img class="size-[100%] object-cover" src="assets/todo-app-image.png" alt="Todo App Image">
+                        </div>
+                        <div class="full p-[26px]">
+                            <h4 class="text-[20px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter leading-[26px] mb-3">TaskFlow – To-Do Manager</h4>
+                            <p class="w-full text-[15px] font-normal text-[#64748B] dark:text-[#94A3B8] leading-6 font-inter">A simple task management application for creating, organizing, tracking, and managing daily tasks with an intuitive, user-friendly interface.</p>
+                            <div class="flex justify-start my-3">
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">HTML</div>
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">React</div>
+                                <div class="text-[12px] font-semibold font-inter text-[#4F46E5] bg-[#4F46E5]/10 dark:text-[#A5B4FC] dark:bg-[#272B5C] py-[6px] px-[12px] rounded-3xl mr-2">CSS</div>
+                            </div>
+                            <div class="w-full flex justify-start">
+                                <div class="py-[10px] px-[18px] bg-[#4F46E5] dark:bg-[#6366F1] rounded-xl text-sm font-semibold font-inter text-[#FFFFFF]  hover:scale-105 transition-transform duration-300 mr-[10px]">
+                                    <a href="https://todoapp-19.netlify.app/" target="_blank">Live Demo</a>
+                                </div>
+                                <div class="py-[10px] px-[18px] border-2 border-[#E2E8F0] dark:border-[#2A3750] rounded-xl text-sm font-semibold font-inter text-[#0F172A] dark:text-[#F1F5F9] hover:scale-105 transition-transform duration-300">
+                                    <a href="https://github.com/muhammed-saif/Taskflow-Todo-App" target="_blank">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Academic Srction -->
+    <section class="w-full bg-[#F8FAFC] dark:bg-[#0F172A]">
+        <div class="w-[90%] lg:w-[1200px] mx-auto py-16 lg:py-24">
+            <h2 class="text-[13px] font-bold text-[#4F46E5] dark:text-[#A5B4FC] tracking-[2px] font-inter uppercase text-center">Education</h2>
+            <h3 class="text-[30px] lg:text-[42px] font-extrabold text-[#0F172A] dark:text-[#F1F5F9] tracking-[-1px] font-inter leading-[38px] lg:leading-[52px] text-center my-3">My academic journey</h3>
+            <div class="w-full mt-14 flex justify-center md:justify-evenly lg:justify-baseline flex-wrap">
+            <!-- Featured Card -->
+                <div class="w-full md:w-10/21 lg:w-10/32 rounded-2xl p-6 shadow-lg mb-5 lg:mb-0 bg-[#FFFFFF] dark:bg-[#172033] border-t-4 border-l-1 border-r-1 border-b-1 border-t-[#4F46E5] dark:border-t-[#6366F1] border-l-[#E2E8F0] border-r-[#E2E8F0] border-b-[#E2E8F0] dark:border-l-[#2A3750] dark:border-r-[#2A3750] dark:border-b-[#2A3750]">
+                    <div class="flex justify-start my-3">
+                        <div class="text-[12px] font-semibold font-inter text-[#4F46E5] dark:text-[#A5B4FC] py-[6px] px-[12px] bg-[#4F46E5]/10 dark:bg-[#272B5C] rounded-3xl mr-2">2024 – 2026</div>
+                    </div>
+                    <h3 class="text-[19px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter leading-[26px]">Higher Secondary Certificate (HSC)</h3>
+                    <h4 class="text-[15px] font-semibold text-[#4F46E5] dark:text-[#A5B4FC] font-inter py-[10px]">Chittagong University School & College</h4>
+                    <p class="text-[15px] font-normal text-[#64748B] dark:text-[#94A3B8] font-inter leading-[24px]">Science group with a focus on Mathematics and ICT.</p>
+                </div>
+            <!-- Featured Card -->
+                <div class="w-full md:w-10/21 lg:w-10/32 rounded-2xl p-6 shadow-lg mb-5 lg:mb-0 bg-[#FFFFFF] dark:bg-[#172033] border-t-4 border-l-1 border-r-1 border-b-1 border-t-[#4F46E5] dark:border-t-[#6366F1] border-l-[#E2E8F0] border-r-[#E2E8F0] border-b-[#E2E8F0] dark:border-l-[#2A3750] dark:border-r-[#2A3750] dark:border-b-[#2A3750]">
+                    <div class="flex justify-start my-3">
+                        <div class="text-[12px] font-semibold font-inter text-[#4F46E5] dark:text-[#A5B4FC] py-[6px] px-[12px] bg-[#4F46E5]/10 dark:bg-[#272B5C] rounded-3xl mr-2">2022 – 2024</div>
+                    </div>
+                    <h3 class="text-[19px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter leading-[26px]">Secondary School Certificate (SSC)</h3>
+                    <h4 class="text-[15px] font-semibold text-[#4F46E5] dark:text-[#A5B4FC] font-inter py-[10px]">Chittagong University School & College</h4>
+                    <p class="text-[15px] font-normal text-[#64748B] dark:text-[#94A3B8] font-inter leading-[24px]">Built a strong foundation in Science and Mathematics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contactSection" class="w-full bg-[#070C18]">
+        <div class="w-[90%] lg:w-[1200px] mx-auto py-16 lg:py-24 flex flex-wrap">
+            <div class="w-full lg:w-1/2 mb-5 lg:mb-0">
+                <h2 class="text-[13px] font-bold text-[#67E8F9] tracking-[2px] font-inter uppercase">Cpntact</h2>
+                <h3 class="text-[30px] lg:text-[42px] font-extrabold text-[#FFFFFF] tracking-[-1px] font-inter leading-[38px] lg:leading-[52px]">Let’s build something great together</h3>
+                <p class="text-[17px] font-normal text-[#94A3B8] leading-7 font-inter">Have a project, an internship opportunity, or just want to say hello? Send me a message and I’ll get back to you soon.</p>
+                <div class="w-ful py-6">
+                <!-- Contact Group -->
+                    <div class="w-full flex">
+                        <div class="size-12 bg-[#1E293B] p-[13px] mr-4 rounded-xl">
+                            <svg class="size-[22px] fill-[#A5B4FC]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z"/></svg>
+                        </div>
+                        <div class="w-full py-[5.5px]">
+                            <h4 class="text-[13px] font-normal text-[#94A3B8] font-inter">E-mail</h4>
+                            <p class="text-md font-semibold text-[#FFFFFF] font-inter">saifdzu7@gmail.com</p>
+                        </div>
+                    </div>
+                <!-- Contact Group -->
+                    <div class="w-full flex py-6">
+                        <div class="size-12 bg-[#1E293B] p-[13px] mr-4 rounded-xl">
+                            <svg class="size-[22px] fill-[#A5B4FC]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"></path></svg>                        
+                        </div>
+                        <div class="w-full py-[5.5px]">
+                            <h4 class="text-[13px] font-normal text-[#94A3B8] font-inter">Phone</h4>
+                            <p class="text-md font-semibold text-[#FFFFFF] font-inter">+8801881220134</p>
+                        </div>
+                    </div>
+                <!-- Contact Group -->
+                    <div class="w-full flex">
+                        <div class="size-12 bg-[#1E293B] p-[13px] mr-4 rounded-xl">
+                            <svg class="size-[22px] fill-[#A5B4FC]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z"></path></svg>
+                        </div>
+                        <div class="w-full py-[5.5px]">
+                            <h4 class="text-[13px] font-normal text-[#94A3B8] font-inter">Location</h4>
+                            <p class="text-md font-semibold text-[#FFFFFF] font-inter">Bangladesh</p>
+                        </div>
+                    </div>                
+                </div>
+                <div class="flex justify-start">
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#64748B] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://github.com/muhammed-saif" target="_blank">GitHub</a>
+                        </button>
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#64748B] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://www.linkedin.com/in/muhammed-saif-" target="_blank">Linkedin</a>
+                        </button>
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#64748B] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://www.facebook.com/muhammed.saif.19" target="_blank">Facebook</a>
+                        </button>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <div class="w-full lg:w-10/12 bg-[#FFFFFF] dark:bg-[#172033] p-9 border-2 border-[#E2E8F0] dark:border-[#2A3750] rounded-xl">
+                    <h2 class="text-[22px] font-bold text-[#0F172A] dark:text-[#F1F5F9] font-inter">Send a message</h2>
+                    <form action="" method="post">
+                        <!-- Input Group -->
+                        <div class="w-full py-4">
+                            <label  class="text-sm font-semibold text-[#0F172A] dark:text-[#F1F5F9] font-inter block mb-2">Name</label>
+                            <input class="w-full h-12 bg-[#F8FAFC] dark:bg-[#0F172A] border-2 border-[#E2E8F0] dark:border-[#2A3750] rounded-xl outline-0 text-md pl-4 text-[#0F172A] dark:text-[#F1F5F9] font-inter placeholder:text-[15px] placeholder:text-[#94A3B8] placeholder:font-normal focus:border-[#4F46E5]" type="text" placeholder="Your full name">
+                        </div>
+                        <!-- Input Group -->
+                        <div class="w-full">
+                            <label  class="text-sm font-semibold text-[#0F172A] dark:text-[#F1F5F9] font-inter block mb-2">E-mail</label>
+                            <input class="w-full h-12 bg-[#F8FAFC] dark:bg-[#0F172A] border-2 border-[#E2E8F0] dark:border-[#2A3750] rounded-xl outline-0 text-md pl-4 text-[#0F172A] dark:text-[#F1F5F9] font-inter placeholder:text-[15px] placeholder:text-[#94A3B8] placeholder:font-normal focus:border-[#4F46E5]" type="email" placeholder="you@example.com">
+                        </div>
+                        <!-- Input Group -->
+                        <div class="w-full py-4">
+                            <label  class="text-sm font-semibold text-[#0F172A] dark:text-[#F1F5F9] font-inter block mb-2">Message</label>
+                            <textarea class="w-full h-30 bg-[#F8FAFC] dark:bg-[#0F172A] border-2 border-[#E2E8F0] dark:border-[#2A3750] rounded-xl outline-0 text-md py-[14px] px-4 text-[#0F172A] dark:text-[#F1F5F9] font-inter placeholder:text-[15px] placeholder:text-[#94A3B8] placeholder:font-normal focus:border-[#4F46E5]" placeholder="Write your message here…"></textarea>
+                        </div>
+                        <div class="w-full">
+                            <button type="submit" class="w-full h-12 rounded-xl bg-[#4F46E5] text-md font-bold text-[#FFFFFF] font-semibold font-inter hover:bg-[#1108bc] hover:scale-105 transition-all">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="w-full bg-[#020617] py-16 lg:py-24">
+        <div class="w-[90%] lg:w-[1200px] mx-auto flex flex-wrap pb-8 border-b-2 border-[#1E293B]">
+            <div class="w-full lg:w-1/3 flex justify-center lg:justify-start mb-5">
+                <div class="w-full lg:w-4/5">
+                    <div class="w-full mb-5 lg:mb-3">
+                        <a class="flex justify-center lg:justify-start items-center" href="index.html">
+                            <div class="size-10 rounded-xl bg-linear-to-br from-[#4F46E5] to-[#06B6D4] flex justify-center items-center uppercase text-md text-white font-extrabold font-inter">ms</div>
+                            <span class="text-md font-extrabold font-inter text-white capitalize ml-2">Muhammed Saif</span>
+                        </a>
+                    </div>
+                    <p class="text-sm font-normal text-[#94A3B8] text-center lg:text-left font-inter">Aspiring full-stack developer building responsive web apps.</p>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/3 flex justify-center mb-5 lg:mb-0">
+                <ul class="flex justify-evenly items-center space-x-7">
+                    <li class="text-[15px] font-normal text-[#CBD5E1] font-inter leading-[16px] hover:text-[#4F46E5] transition-colors duration-200"><a href="index.html">Home</a></li>
+                    <li class="text-[15px] font-normal text-[#CBD5E1] font-inter leading-[16px] hover:text-[#4F46E5] transition-colors duration-200"><a href="#aboutSection">About</a></li>
+                    <li class="text-[15px] font-normal text-[#CBD5E1] font-inter leading-[16px] hover:text-[#4F46E5] transition-colors duration-200"><a href="#skillsSection">Skills</a></li>
+                    <li class="text-[15px] font-normal text-[#CBD5E1] font-inter leading-[16px] hover:text-[#4F46E5] transition-colors duration-200"><a href="#projectSection">Project</a></li>
+                    <li class="text-[15px] font-normal text-[#CBD5E1] font-inter leading-[16px] hover:text-[#4F46E5] transition-colors duration-200"><a href="#contactSection">Contact</a></li>
+                </ul>
+            </div>
+            <div class="w-full lg:w-1/3 flex justify-center lg:justify-end items-center">
+                <div class="flex justify-centr h-fit">
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#64748B] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://github.com/muhammed-saif" target="_blank">GitHub</a>
+                        </button>
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#64748B] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://www.linkedin.com/in/muhammed-saif-" target="_blank"href="#">Linkedin</a>
+                        </button>
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#64748B] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                            <a href="https://www.facebook.com/muhammed.saif.19" target="_blank">Facebook</a>
+                        </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-[90%] lg:w-[1200px] mx-auto flex flex-wrap mt-8">
+            <div class="w-full lg:w-1/3 mb-5 lg:mb-0">
+                <h6 class="text-sm font-normal text-[#64748B] font-inter text-center lg:text-left">&copy; 2026 Muhammed Saif. All rights reserved.</h6>
+            </div>
+            <!-- Developer footnote -->
+            <div class="w-full lg:w-1/3 mb-5 lg:mb-0">
+                <h6 class="text-sm text-center italic text-[#64748B] text-center"> Developed by ~ <a href="https://www.linkedin.com/in/muhammed-saif-"><u class="hover:text-[#4F46E5] transition-colors duration-200 ">Saif</u></a> </h6>
+            </div>
+            <div class="w-full lg:w-1/3 mb-5 lg:mb-0">
+                <h6 class="text-sm font-normal text-[#64748B] font-inter text-center lg:text-right">&copy; Built with HTML, CSS & Tailwind CSS</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="src/index.js"></script>
+</body>
+</html>

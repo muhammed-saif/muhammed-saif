@@ -1,0 +1,96 @@
+// html element selector ~
+const rootElement = document.documentElement;
+const header = document.querySelector("header");
+const nav = document.querySelector("nav");
+const sidebarOpenBtn = document.querySelector("#sidebarOpenBtn");
+const sidebarCloseBtn = document.querySelector("#sidebarCloseBtn");
+const sidebar = document.querySelector("#sidebar");
+const togglesBtn = document.querySelectorAll("#toggleBtn");
+
+    const isDark = document.documentElement.classList.contains("dark");
+
+
+    
+// Sidebar open & close
+sidebarOpenBtn.addEventListener("click", () => {
+    sidebar.classList.remove(
+        "translate-x-full",
+        "opacity-0",
+        "invisible"
+    );
+    sidebarOpenBtn.classList.add("hidden");
+    sidebarCloseBtn.classList.remove("hidden");
+});
+
+sidebarCloseBtn.addEventListener("click", () => {
+    sidebar.classList.add(
+        "translate-x-full",
+        "opacity-0",
+        "invisible"
+    );
+    sidebarOpenBtn.classList.remove("hidden");
+    sidebarCloseBtn.classList.add("hidden");
+});
+
+
+
+
+// Light and Dark theme Toggle function
+togglesBtn.forEach((toggleBtn) =>{
+    toggleBtn.addEventListener("click",() => {
+        rootElement.classList.toggle("dark");
+        try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch {}
+    });
+});
+
+// restore saved theme on load
+try {
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+    }
+} catch {}
+
+window.addEventListener("DOMContentLoaded", () => {
+    // Check if the theme is dark and set the toggle button position accordingly
+    const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    rootElement.classList.toggle("dark", isDark || themeQuery.matches);
+});
+
+
+const headerEffect = () => {
+    const currentTheme = rootElement.classList.contains("dark") ? "dark" : "light";
+    window.addEventListener("scroll", () => {
+        const Theme = rootElement.classList.contains("dark") ? "dark" : "light";
+        // if ((window.scrollY > 10) && (Theme === "light")) {
+        //     header.classList.add("bg-[#FFFFFF]/80", "backdrop-blur-md", "shadow-lg", "shadow-[#4F46E5]/50", "shadow-[#7C3AED]/30");
+        //     header.classList.remove("bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
+        // } else if ((window.scrollY > 10) && (Theme === "dark")) {
+        //     header.classList.add("bg-[#1E1B4B]/80", "backdrop-blur-md", "shadow-lg", "shadow-[#4F46E5]/50", "shadow-[#7C3AED]/30");
+        //     header.classList.remove("bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
+        // }
+
+        // for light theme
+        if (window.scrollY > 10) {
+            header.classList.add("shadow-md", "backdrop-blur-md", "dark:shadow-[#1E1B4B]/30","dark:bg-[#1E1B4B]/30","shadow-[#7C3AED]/50", "bg-[#7C3AED]/50");
+            header.classList.remove("bg-linear-to-br", "dark:from-[#1E1B4B]]", "dark:to-[#3730A3]","bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
+        }// for dark theme
+        else{
+            header.classList.remove("shadow-md", "backdrop-blur-md", "dark:shadow-[#1E1B4B]/30","dark:bg-[#1E1B4B]/30","shadow-[#7C3AED]/50", "bg-[#7C3AED]/50");
+            header.classList.add("bg-linear-to-br", "dark:from-[#1E1B4B]", "dark:to-[#3730A3]","bg-linear-to-br", "from-[#4F46E5]", "to-[#7C3AED]");
+        } 
+    });
+};
+
+headerEffect();
+
+
+
+
+
+
+
+
+
+
+
+
