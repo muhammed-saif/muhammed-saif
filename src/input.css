@@ -7,14 +7,16 @@
 
 @theme{
     --font-inter: "Inter", sans-serif;
+    --font-jetbrains: "JetBrains Mono", monospace;
+    --font-roboto: "Roboto", sans-serif;
 }
 
 @layer components {
     .visibleAnimation{
-        @apply opacity-100 scale-100 transition-all duration-1000;
+        @apply opacity-100 scale-100 transition-all duration-2000;
     }
     .invisibleAnimation{
-        @apply opacity-0 scale-0 transition-all duration-1000;
+        @apply opacity-0 scale-0 transition-all duration-2000;
     }
 
     .floating-tooltip {
