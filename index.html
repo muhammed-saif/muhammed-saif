@@ -13,7 +13,7 @@
 <body>
     <!-- header Section -->
     <header class="w-full py-5 sticky top-0 backdrop-blur-md bg-linear-to-br from-[#4F46E5] dark:from-[#1E1B4B] to-[#7C3AED] dark:to-[#3730A3] z-50 transition-colors ease-in-out duration-300">
-        <nav class="w-[90%] lg:w-[1200px] mx-auto flex items-center">
+        <nav class="invisibleAnimation w-[90%] lg:w-[1200px] mx-auto flex items-center">
             <div class="w-3/5 lg:w-5/12 flex justify-start">
                 <div class="lw-full lg:w-4/10">
                     <a class="flex items-center" href="index.html">
@@ -64,49 +64,49 @@
                     </div>
                 </div>
                 <button class="size-7">
-                    <svg id="sidebarOpenBtn" class="size-[100%] md:size-7 fill-[#0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18V20H5V18H16ZM21 11V13H3V11H21ZM19 4V6H8V4H19Z"></path></svg>
-                    <svg id="sidebarCloseBtn" class="hidden size-[100%] md:size-7 fill-[#0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
+                    <svg id="sidebarOpenBtn" class="size-[100%] md:size-7 fill-[#FFFFFF] dark:fill-[#F1F5F9]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18V20H5V18H16ZM21 11V13H3V11H21ZM19 4V6H8V4H19Z"></path></svg>
+                    <svg id="sidebarCloseBtn" class="hidden size-[100%] md:size-7 fill-[#FFFFFF] fill-[#F1F5F9]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
                 </button>
             </div>
         </nav>
     </header>
     <!-- Sidebar Section -->
     <section>
-        <div id="sidebar" class="w-full mx-auto h-dvh fixed top-[78px] backdrop-blur-md bg-[#ffffff]/70 right-0 z-50 translate-x-full opacity-0 invisible transition-[transform,opacity,visibility]">
+        <div id="sidebar" class="w-full mx-auto h-dvh fixed top-[78px] backdrop-blur-md bg-[#ffffff]/70 dark:bg-[#0F172A]/70 right-0 z-50 translate-x-full opacity-0 invisible transition-[transform,opacity,visibility]">
             <div class="w-[90%] mx-auto">
-                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] dark:border-[#2A3750] dark:text-[#F1F5F9]  hover:text-[#4F46E5] dark:hover:text-[#A5B4FC] dark:fill-[#94A3B8] hover:fill-[#4F46E5] dark:hover:fill-[#A5B4FC] transition-colors duration-200">
                         <a href="index.html" class="text-[20px] font-semibold font-inter py-[20px] block">Home</a>
                         <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
                     </li>
-                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0f172a]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] dark:border-[#2A3750] dark:text-[#F1F5F9]  hover:text-[#4F46E5] dark:hover:text-[#A5B4FC] dark:fill-[#94A3B8] hover:fill-[#4F46E5] dark:hover:fill-[#A5B4FC] transition-colors duration-200">
                         <a href="#aboutSection" class="text-[20px] font-semibold font-inter py-[20px] block">About</a>
                         <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
                     </li>
-                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] dark:border-[#2A3750] dark:text-[#F1F5F9]  hover:text-[#4F46E5] dark:hover:text-[#A5B4FC] dark:fill-[#94A3B8] hover:fill-[#4F46E5] dark:hover:fill-[#A5B4FC] transition-colors duration-200">
                         <a href="#skillsSection" class="text-[20px] font-semibold font-inter py-[20px] block">Skills</a>
                         <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
                     </li>
-                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] dark:border-[#2A3750] dark:text-[#F1F5F9]  hover:text-[#4F46E5] dark:hover:text-[#A5B4FC] dark:fill-[#94A3B8] hover:fill-[#4F46E5] dark:hover:fill-[#A5B4FC] transition-colors duration-200">
                         <a href="#projects" class="text-[20px] font-semibold font-inter py-[20px] block">Projects</a>
                         <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
                     </li>
-                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] text-[#0F172A]  hover:text-[#4F46E5] hover:fill-[#4F46E5] transition-colors duration-200">
+                    <li class="flex justify-between items-center border-b-1 border-[#94A3B8] dark:border-[#2A3750] dark:text-[#F1F5F9]  hover:text-[#4F46E5] dark:hover:text-[#A5B4FC] dark:fill-[#94A3B8] hover:fill-[#4F46E5] dark:hover:fill-[#A5B4FC] transition-colors duration-200">
                         <a href="#contactSection" class="text-[20px] font-semibold font-inter py-[20px] block">Contact</a>
                         <svg class="size-6 fill-[0F172A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
                     </li>
                     <li class="mt-[40px]">
-                        <button class="w-full bg-[#4F46E5] px-[145px] py-[15px] rounded-lg hover:bg-[#1108bc] hover:scale-105 transition-all">
+                        <button class="w-full bg-[#4F46E5] dark:bg-[#6366F1] px-[145px] py-[15px] rounded-lg hover:bg-[#1108bc] dark:hover:bg-[#3f42ee] hover:scale-105 transition-all">
                             <a class="text-md text-center font-semibold font-inter text-[#FFFFFF]" href="#">Hire Me</a>
                         </button>
                     </li>
                     <li class="flex justify-start mt-[22px]">
-                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#E2E8F0] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] dark:text-[#94A3B8] hover:text-[#4F46E5] dark:hover:text-[#6366F1] py-[9px] px-[16px] border-2 border-[#9d9d9d] dark:border-[#2A3750] hover:border-[#4F46E5] dark:hover:border-[#6366F1] rounded-full mr-[10px] transition-all duration-300">
                             <a href="https://github.com/muhammed-saif" target="_blank">GitHub</a>
                         </button>
-                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#E2E8F0] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] dark:text-[#94A3B8] hover:text-[#4F46E5] dark:hover:text-[#6366F1] py-[9px] px-[16px] border-2 border-[#9d9d9d] dark:border-[#2A3750] hover:border-[#4F46E5] dark:hover:border-[#6366F1] rounded-full mr-[10px] transition-all duration-300">
                             <a href="https://www.linkedin.com/in/muhammed-saif-" target="_blank">Linkedin</a>
                         </button>
-                        <button class="text-[13px] font-semibold font-inter text-[#64748B] hover:text-[#4F46E5] py-[9px] px-[16px] border-2 border-[#E2E8F0] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
+                        <button class="text-[13px] font-semibold font-inter text-[#64748B] dark:text-[#94A3B8] hover:text-[#4F46E5] dark:hover:text-[#6366F1] py-[9px] px-[16px] border-2 border-[#9d9d9d] dark:border-[#2A3750] hover:border-[#4F46E5] rounded-full mr-[10px] transition-all duration-300">
                             <a href="https://www.facebook.com/muhammed.saif.19" target="_blank">Facebook</a>
                         </button>
                     </li>
@@ -710,14 +710,14 @@
             </div>
         </div>
         <div class="w-[90%] lg:w-[1200px] mx-auto flex flex-wrap mt-8">
-            <div class="invisibleAnimation w-full lg:w-1/3 mb-5 lg:mb-0">
+            <div class="invisibleAnimation w-full lg:w-1/3 mb-5 lg:mb-0 order-1">
                 <h6 class="text-sm font-normal text-[#64748B] font-inter text-center lg:text-left">&copy; 2026 Muhammed Saif. All rights reserved.</h6>
             </div>
             <!-- Developer footnote -->
-            <div class="invisibleAnimation w-full lg:w-1/3 mb-5 lg:mb-0">
+            <div class="invisibleAnimation w-full lg:w-1/3 mb-5 lg:mb-0 order-3 lg:order-2">
                 <h6 class="text-sm text-center italic text-[#64748B] text-center"> Developed by ~ <a href="https://www.linkedin.com/in/muhammed-saif-"><u class="hover:text-[#4F46E5] transition-colors duration-200 ">Saif</u></a> </h6>
             </div>
-            <div class="invisibleAnimation w-full lg:w-1/3 mb-5 lg:mb-0">
+            <div class="invisibleAnimation w-full lg:w-1/3 mb-5 lg:mb-0 order-2 lg:order-3">
                 <h6 class="text-sm font-normal text-[#64748B] font-inter text-center lg:text-right">&copy; Built with HTML, CSS & Tailwind CSS</h6>
             </div>
         </div>
