@@ -13,21 +13,26 @@
 
 @layer components {
     .visibleAnimation{
-        @apply opacity-100 scale-100 transition-all duration-2000;
+        @apply opacity-100 translate-y-0  transition-all duration-2000;
     }
     .invisibleAnimation{
-        @apply opacity-0 scale-0 transition-all duration-2000;
+        @apply opacity-0 translate-y-[100px]  transition-all duration-2000;
     }
-
+    .visibleProgressAnimation{
+        @apply opacity-100 scale-100 origin-left transition-all duration-2000;
+    }
+    .invisibleProgressAnimation{
+        @apply opacity-0 scale-0 origin-left transition-all duration-2000;
+    }
     .floating-tooltip {
-    animation: floating 3s ease-in-out infinite;
+    animation: floating 4s ease-in-out infinite;
     }
     .tooltip-left {
-    animation-duration: 3.5s;
+    animation-duration: 7s;
     }
 
     .tooltip-right {
-        animation-duration: 4s;
+        animation-duration: 8.2s;
         animation-delay: 0.5s;
     }
     
@@ -39,6 +44,8 @@
             transform: translateY(-15px);
         }
     }
-
+    .typed-cursor {
+        color: #67E8F9;
+    }
 
 }

@@ -6,6 +6,8 @@ const sidebarOpenBtn = document.querySelector("#sidebarOpenBtn");
 const sidebarCloseBtn = document.querySelector("#sidebarCloseBtn");
 const sidebar = document.querySelector("#sidebar");
 const togglesBtn = document.querySelectorAll("#toggleBtn");
+const typingElements = document.querySelectorAll("#typingAnimation");
+const typingSources = document.querySelectorAll("#typingSource");
 
     const isDark = document.documentElement.classList.contains("dark");
 
@@ -50,11 +52,34 @@ try {
     }
 } catch {}
 
+
 window.addEventListener("DOMContentLoaded", () => {
     // Check if the theme is dark and set the toggle button position accordingly
     const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
     rootElement.classList.toggle("dark", isDark || themeQuery.matches);
+
+
+    // Initialize each animation
+    typingElements.forEach((typingElement, index) => {
+
+        const typingText = typingSources[index].textContent.trim();
+        console.log(typingText);
+
+        const typed = new Typed(typingElement, {
+            strings: [typingText],
+            typeSpeed: 70,
+            backSpeed: 40,
+            startDelay: 1000,
+            backDelay: 1500,
+            loop: true,
+            showCursor: true,
+        });
+    });
+
+
+
 });
+
 
 
 const headerEffect = () => {
@@ -89,11 +114,13 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add("visibleAnimation");
+            entry.target.classList.add("visibleProgressAnimation");
             entry.target.classList.remove("invisibleAnimation");
-            
+            entry.target.classList.remove("invisibleProgressAnimation");
         }else {
             entry.target.classList.remove("visibleAnimation");
-            entry.target.classList.add("invisibleAnimation");
+            entry.target.classList.remove("visibleProgressAnimation");
+            // entry.target.classList.add("invisibleAnimation");
         }
     });
 },{
@@ -101,10 +128,11 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 
-const browserElements = document.querySelectorAll(".invisibleAnimation");
+const browserElements = document.querySelectorAll(".invisibleAnimation,.invisibleProgressAnimation");
     browserElements.forEach((browserElement) => {
     observer.observe(browserElement);
 });
+
 
 
 
