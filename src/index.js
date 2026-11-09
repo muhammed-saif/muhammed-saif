@@ -113,15 +113,19 @@ headerEffect();
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("visibleAnimation");
-            entry.target.classList.add("visibleProgressAnimation");
-            entry.target.classList.remove("invisibleAnimation");
-            entry.target.classList.remove("invisibleProgressAnimation");
+            if(entry.target.classList.contains("invisibleAnimation")){
+                entry.target.classList.add("visibleAnimation");
+                entry.target.classList.remove("invisibleAnimation");
+            }
+            else if(entry.target.classList.contains("invisibleProgressAnimation")){
+                entry.target.classList.add("visibleProgressAnimation");
+                entry.target.classList.remove("invisibleProgressAnimation");
+            }
         }else {
             entry.target.classList.remove("visibleAnimation");
             entry.target.classList.remove("visibleProgressAnimation");
-            // entry.target.classList.add("invisibleAnimation");
-        }
+        };
+
     });
 },{
     threshold: 0.5
